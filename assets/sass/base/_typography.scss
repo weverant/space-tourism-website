@@ -1,0 +1,22 @@
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-title-family;
+    font-weight: 400;
+    line-height: $font-title-line-height;
+    text-transform: uppercase;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+p {
+    max-width: 65ch;
+}
+
+.title {}
+
+.condensed-font {
+    font-family: $font-condensed-family;
+    letter-spacing: clamp(2.35px, 0.135em, 4.75px);
+}

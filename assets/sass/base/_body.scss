@@ -1,0 +1,13 @@
+*  { box-sizing: border-box; }
+
+html {
+    font-size: $rem-base;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: $font-body-family;
+    font-weight: 400;
+    font-size: clamp(1.5rem, 1rem + 1vw, 1.8rem);
+    line-height: $font-body-line-height;
+}

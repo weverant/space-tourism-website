@@ -2,16 +2,16 @@
     <header>
         <nav>
             <NuxtLink to="/">Logo</NuxtLink>
-            <ul>
-                <li><NuxtLink to="/">00 Home</NuxtLink></li>
-                <li><NuxtLink to="/destination">01 Destination</NuxtLink></li>
+            <ol>
+                <li><NuxtLink to="/">Home</NuxtLink></li>
+                <li><NuxtLink to="/destination">Destination</NuxtLink></li>
                 <li>
-                    <NuxtLink to="/crew">02 Crew</NuxtLink>
+                    <NuxtLink to="/crew">Crew</NuxtLink>
                 </li>
                 <li>
-                    <NuxtLink to="/technology">03 Technology</NuxtLink>
+                    <NuxtLink to="/technology">Technology</NuxtLink>
                 </li>
-            </ul>
+            </ol>
         </nav>
     </header>
     <main class="">

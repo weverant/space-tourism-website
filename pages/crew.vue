@@ -1,5 +1,5 @@
 <template>
-    <h1><span>02</span>Meet your crew</h1>
+    <h1 class="condensed-font"><span>02</span>Meet your crew</h1>
     <ContentNav
         :data="data.crew"
         :length="data.crew.length"
