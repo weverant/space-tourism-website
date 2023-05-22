@@ -14,7 +14,7 @@
             </ol>
         </nav>
     </header>
-    <main class="">
+    <main class="container">
         <slot />
     </main>
 </template>

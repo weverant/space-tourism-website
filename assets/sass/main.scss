@@ -1,10 +1,13 @@
 // BASE
 @import "base/reset";
-@import "base/variables";
 @import "base/mixins";
+@import "base/variables";
 @import "base/fonts";
-@import "base/typography";
 @import "base/body";
 
+@import "base/placeholder";
+@import "base/typography";
+@import "base/helpers";
+
 // COMPONENTS
-@import "components/buttons"
+@import "components/buttons";
