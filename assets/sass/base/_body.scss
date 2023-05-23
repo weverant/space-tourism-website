@@ -1,3 +1,6 @@
+@use "./variables/fonts" as *;
+@use "./mixins" as *;
+
 *  { box-sizing: border-box; }
 
 html {
@@ -6,10 +9,23 @@ html {
 }
 
 body {
+    --img: url('~/assets/images/home/background-home-mobile.jpg');
+
     font-family: $font-body-family;
     font-weight: 400;
     font-size: clamp(1.5rem, 1rem + 1vw, 1.8rem);
     line-height: $font-body-line-height;
-    color: var(--text-color);
+    
+    color: var(--clear-color);
     background-color: var(--background-color);
+
+    background-image: var(--img);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    overflow-x: hidden;
+
+    @include after-in(large) {
+        min-height: 100vh;
+    }
 }

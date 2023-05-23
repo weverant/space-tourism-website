@@ -1,4 +1,9 @@
+@use "../mixins" as *;
+@use "../variables/fonts" as *;
+
 :root {
+    --condensed-font: #{$font-condensed-family};
+
     --heading-500: clamp(8rem, 1rem + 9vw, 15rem);
     --heading-400: clamp(5.6rem, 1rem + 6vw, 10rem);
     --heading-300: clamp(2.4rem, 1rem + 3vw, 5.6rem);
@@ -8,11 +13,12 @@
     --sub-heading-200: 2.8rem;
     --sub-heading-100: 1.4rem;
 
-
     --container-width: 1100px;
     --gutter: 1rem;
 
-    @include breakpoint(medium) {
+    --easing: cubic-bezier(0.770, 0.000, 0.175, 1.000);
+
+    @include after-in(medium) {
         --gutter: 3rem;
     }
 }

@@ -1,13 +1,26 @@
+@use "mixins" as *;
+
 %container {
-    --_padding: 2.4rem;
+    --padding-x: 2.4rem;
 
     position: relative;
     width: 100%;
-    max-width: var(--container-width);
+    max-width: calc(var(--container-width) + (var(--padding-x) * 2));
     margin: 0 auto;
-    padding: 0 var(--_padding);
+    padding: 0 var(--padding-x);
 
-    @include breakpoint(medium) {
-        --_padding: 4.8rem
+    @include after-in(medium) {
+        --padding-x: 4.8rem
     }
+
+    @include after-in(1196) {
+        --padding-x: 0px;
+    }
+}
+
+%condensed-font {
+    font-family: var(--condensed-font);
+    font-weight: 400;
+    letter-spacing: clamp(2.35px, 0.135em, 4.75px);
+    text-transform: uppercase;
 }

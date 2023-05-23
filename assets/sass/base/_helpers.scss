@@ -1,3 +1,5 @@
+@use "./placeholder";
+
 .container {
     @extend %container;
 }
