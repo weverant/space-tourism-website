@@ -1,0 +1,16 @@
+@use "../base/mixins" as *;
+
+.section {
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: var(--gutter);
+
+        @include after-in(large) {
+            flex-direction: row;
+            align-items: flex-end;
+        }
+    }
+}

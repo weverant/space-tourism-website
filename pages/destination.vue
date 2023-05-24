@@ -14,6 +14,13 @@ const { data } = await useAsyncData('destinations', () => {
     return queryContent('/destinations').only(['destinations']).findOne();
 });
 
+useHead({
+    bodyAttrs: {
+        class: 'destination-page',
+    },
+    title: 'Destination',
+});
+
 const currentIndex = ref(0);
 
 const changeIndex = (index) => {

@@ -50,6 +50,12 @@ const nav = [
 
 const route = useRoute();
 
+useHead({
+    titleTemplate: (titleChunk) => {
+        return titleChunk ? `${titleChunk} | Space Tourism` : 'Space Tourism';
+    },
+});
+
 const showMobileMenu = ref(false);
 
 const showMenu = () => {
@@ -60,22 +66,6 @@ watch(route, () => {
     showMobileMenu.value = false;
 });
 </script>
-
-<style lang="scss">
-@use '../assets/sass/base/mixins' as *;
-@use '../assets/sass/base/placeholder';
-
-body {
-    --img: url('~/assets/images/home/background-home-mobile.jpg');
-
-    @include after-in(medium) {
-        --img: url('~/assets/images/home/background-home-tablet.jpg');
-    }
-    @include after-in(large) {
-        --img: url('~/assets/images/home/background-home-desktop.jpg');
-    }
-}
-</style>
 
 <style lang="scss" scoped>
 @use '../assets/sass/base/mixins' as *;
@@ -155,12 +145,12 @@ body {
             z-index: -1;
 
             @include after-in(medium) {
-                inset: 0 calc(var(--padding-x) * -1);
-                width: calc(100% + var(--padding-x) * 2);
+                inset: 0 calc(var(--container-padding) * -1);
+                width: calc(100% + var(--container-padding) * 2);
             }
 
             @include after-in(wide) {
-                width: calc(100% + (100vw - var(--container-width)));
+                width: calc(100% + (100vw - var(--container-width)) / 2);
             }
         }
 
@@ -175,16 +165,17 @@ body {
 
             width: 66vw;
             height: 100vh;
-            padding: 12rem 3.2rem;
             transition: transform 0.4s var(--easing);
             transform: translateX(100%);
-
-            overflow-y: scroll;
         }
 
         @include after-in(medium) {
             display: flex;
             justify-content: center;
+        }
+
+        @include after-in(wide) {
+            justify-content: flex-end;
         }
     }
 
@@ -194,9 +185,15 @@ body {
         display: flex;
         flex-direction: column;
         gap: 3.2rem;
+        height: 100%;
 
         @extend %condensed-font;
         font-size: 1.6rem;
+
+        @include before-in(medium) {
+            padding: 12rem 3.2rem;
+            overflow: scroll;
+        }
 
         @include after-in(medium) {
             flex-direction: row;

@@ -19,6 +19,13 @@ const { data } = await useAsyncData('technology', () => {
     return queryContent('/technology').only(['technology']).findOne();
 });
 
+useHead({
+    bodyAttrs: {
+        class: 'technology-page',
+    },
+    title: 'Technology',
+});
+
 const currentIndex = ref(0);
 
 const changeIndex = (index) => {

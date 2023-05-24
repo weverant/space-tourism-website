@@ -10,6 +10,9 @@ export default defineNuxtConfig({
     ],
     app: {
         head: {
+            meta: [
+                {name: 'description', content: 'Everything to know about space tourism'}
+            ],
             link: [
                 { rel: 'icon', type: 'image/svg+xml', href: 'favicon.svg' }
             ]

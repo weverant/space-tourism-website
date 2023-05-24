@@ -2,9 +2,10 @@
 @use "../variables/fonts" as *;
 
 :root {
+    --font-title-family: #{$font-title-family};
     --condensed-font: #{$font-condensed-family};
 
-    --heading-500: clamp(8rem, 1rem + 9vw, 15rem);
+    --heading-500: clamp(8rem, 1rem + 15vw, 15rem);
     --heading-400: clamp(5.6rem, 1rem + 6vw, 10rem);
     --heading-300: clamp(2.4rem, 1rem + 3vw, 5.6rem);
     --heading-200: clamp(1.6rem, 1rem + 2vw, 3.2rem);

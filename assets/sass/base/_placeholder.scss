@@ -1,20 +1,20 @@
 @use "mixins" as *;
 
 %container {
-    --padding-x: 2.4rem;
+    --container-padding: 2.4rem;
 
     position: relative;
     width: 100%;
-    max-width: calc(var(--container-width) + (var(--padding-x) * 2));
+    max-width: calc(var(--container-width) + (var(--container-padding) * 2));
     margin: 0 auto;
-    padding: 0 var(--padding-x);
+    padding: 0 var(--container-padding);
 
     @include after-in(medium) {
-        --padding-x: 4.8rem
+        --container-padding: 4.8rem
     }
 
     @include after-in(1196) {
-        --padding-x: 0px;
+        --container-padding: 0px;
     }
 }
 
