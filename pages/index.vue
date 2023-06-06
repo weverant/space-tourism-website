@@ -1,6 +1,6 @@
 <template>
     <section class="section | home-header">
-        <div class="section__inner">
+        <div class="column-layout home-header__layout">
             <div>
                 <span class="overtitle condensed-font"
                     >So, you want to travel to</span
@@ -13,7 +13,7 @@
                     a truly out of this world experience!
                 </p>
             </div>
-            <div class="cta-section">
+            <div class="cta">
                 <NuxtLink to="/destination" class="button button--home"
                     >Explore</NuxtLink
                 >
@@ -51,13 +51,19 @@ body {
 @use '../assets/sass/base/mixins' as *;
 
 .home-header {
+    display: flex;
+    flex-direction: row;
+
+    @include after-in(large) {
+        min-height: 80vh;
+    }
+
     &__title {
         font-size: var(--heading-500);
     }
 
-    .section__inner {
-        padding: 5vh 0;
-        min-height: 80vh;
+    &__layout {
+        width: 100%;
 
         & > * {
             @include before-in(large) {
@@ -72,7 +78,7 @@ body {
         }
 
         @include after-in(large) {
-            padding-bottom: 20vh;
+            align-items: flex-end;
         }
     }
 }
@@ -81,6 +87,12 @@ body {
 
     color: var(--accent-color);
     font-size: var(--heading-100);
+}
+
+.cta {
+    @include after-in(large) {
+        margin-left: auto;
+    }
 }
 
 .button--home {

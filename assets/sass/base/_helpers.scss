@@ -1,5 +1,19 @@
 @use "./placeholder";
+@use "./mixins" as *;
 
 .container {
     @extend %container;
+}
+
+.column-layout {
+    --layout-col-gap: var(--gutter);
+    --layout-row-gap: 4rem;
+
+    display: grid;
+    column-gap: var(--layout-col-gap);
+    row-gap: var(--layout-row-gap);
+
+    @include after-in(large) {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }

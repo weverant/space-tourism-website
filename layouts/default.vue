@@ -67,30 +67,56 @@ watch(route, () => {
 });
 </script>
 
+<style lang="scss">
+@use '../assets/sass/base/mixins' as *;
+
+:root {
+    --header-padding: 4rem;
+    --header-height: 4rem;
+
+    @include after-in(medium) {
+        --header-height: 9rem;
+    }
+}
+
+.page-enter-active,
+.page-leave-active {
+    transition: all 0.32s;
+}
+.page-enter-from,
+.page-leave-to {
+    opacity: 0;
+    filter: blur(0.4rem);
+    transition: all 0s;
+}
+</style>
+
 <style lang="scss" scoped>
 @use '../assets/sass/base/mixins' as *;
 @use '../assets/sass/base/placeholder';
 
 .site-header {
-    --padding-y: 3.2rem;
-
     @extend %container;
+
+    position: absolute;
+    left: 0;
+    right: 0;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    padding-bottom: var(--padding-y);
-    padding-top: calc(var(--padding-y) / 2);
+    padding-bottom: var(--header-padding);
+    padding-top: var(--header-padding);
+
+    z-index: 1;
 
     @include after-in(medium) {
         padding-top: 0;
     }
 
     @include after-in(large) {
-        --padding-y: 4rem;
-
-        padding-top: var(--padding-y);
+        padding-top: var(--header-padding);
     }
 
     &__logo {
@@ -131,6 +157,8 @@ watch(route, () => {
 
     &__inner {
         position: relative;
+        height: var(--header-height);
+
         z-index: 1;
 
         &::before {
@@ -155,18 +183,18 @@ watch(route, () => {
         }
 
         &.open {
-            transform: translateX(0);
+            transform: translateX(-100%);
         }
 
         @include before-in(medium) {
             position: fixed;
-            right: 0;
+            right: -66%;
             top: 0;
 
             width: 66vw;
             height: 100vh;
             transition: transform 0.4s var(--easing);
-            transform: translateX(100%);
+            transform: translateX(0);
         }
 
         @include after-in(medium) {
@@ -215,9 +243,10 @@ watch(route, () => {
             position: relative;
 
             @include after-in(medium) {
-                padding: 3.2rem 0;
+                height: 100%;
+                align-items: center;
 
-                &.router-link-active::after {
+                &::after {
                     content: '';
                     position: absolute;
                     bottom: 0;
@@ -225,7 +254,20 @@ watch(route, () => {
 
                     height: 0.3rem;
                     width: 100%;
-                    background-color: var(--clear-color);
+                    background-color: rgba(
+                        var(--clear-color-rgb),
+                        var(--_opacity, 0)
+                    );
+
+                    transition: background-color 0.24s ease;
+                }
+
+                &.router-link-active::after {
+                    --_opacity: 1;
+                }
+
+                &:hover:not(.router-link-active)::after {
+                    --_opacity: 0.5;
                 }
             }
 

@@ -1,5 +1,6 @@
 @use "./variables/fonts" as *;
 @use "./placeholder" as *;
+@use "./mixins" as *;
 
 h1, h2, h3, h4, h5, h6 {
     font-family: $font-title-family;
@@ -19,7 +20,24 @@ p {
 }
 
 .title {
-    padding: 0.16em 0 0.32em 0;
+    margin: 0.16em 0 0.32em 0;
+
+    &--section {
+        margin-bottom: 2em;
+
+        @include before-in(medium) {
+            text-align: center;
+        }
+
+        @include after-in(large) {
+            margin-bottom: 2.4em;
+        }
+
+        span {
+            opacity: 0.25;
+            margin-right: 1em;
+        }
+    }
 }
 
 .condensed-font {

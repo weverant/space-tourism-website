@@ -19,8 +19,10 @@
 }
 
 %condensed-font {
+    --_letter-spacing: clamp(2.35px, 0.5vw, 4.75px);
+
     font-family: var(--condensed-font);
     font-weight: 400;
-    letter-spacing: clamp(2.35px, 0.135em, 4.75px);
+    letter-spacing: var(--_letter-spacing);
     text-transform: uppercase;
 }

@@ -22,8 +22,8 @@ body {
     background-image: var(--img);
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed;
 
+    height: 100lvh;
     overflow-x: hidden;
 
     @include after-in(large) {

@@ -1,16 +1,11 @@
 @use "../base/mixins" as *;
 
 .section {
+    padding: 2rem 0;
+    min-height: clamp(40rem, 100vh, 1100px);
+    padding-top: calc(var(--header-padding) * 3 + var(--header-height));
 
-    &__inner {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        gap: var(--gutter);
-
-        @include after-in(large) {
-            flex-direction: row;
-            align-items: flex-end;
-        }
+    @include before-in(medium) {
+        padding-top: calc(var(--header-padding) * 2 + var(--header-height));
     }
 }

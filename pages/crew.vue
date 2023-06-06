@@ -1,17 +1,22 @@
 <template>
-    <h1 class="condensed-font"><span>02</span>Meet your crew</h1>
-    <ContentNav
-        :data="data.crew"
-        :length="data.crew.length"
-        :current-index="currentIndex"
-        @change-index="changeIndex"
-    />
-
-    <ContentSection
-        :data="data.crew"
-        :current-index="currentIndex"
-        :overtitle="data.crew[currentIndex].role"
-    />
+    <section class="section">
+        <h2 class="title title--section condensed-font">
+            <span>02</span>Meet your crew
+        </h2>
+        <ContentSection
+            :data="data.crew"
+            :current-index="currentIndex"
+            :overtitle="data.crew[currentIndex].role"
+        >
+            <ContentNav
+                :data="data.crew"
+                :length="data.crew.length"
+                :current-index="currentIndex"
+                :list-type="'dotted'"
+                @change-index="changeIndex"
+            />
+        </ContentSection>
+    </section>
 </template>
 
 <script setup>
@@ -46,7 +51,124 @@ const changeIndex = (index) => {
     @include after-in(large) {
         --img: url('~/assets/images/crew/background-crew-desktop.jpg');
     }
+
+    .section {
+        @include after-in(large) {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    .title--section {
+        @include after-in(large) {
+            margin-bottom: 0;
+        }
+    }
+
+    .content {
+        @include after-in(large) {
+            flex-grow: 1;
+        }
+
+        &__body {
+            display: flex;
+            flex-direction: column;
+
+            @include after-in(large) {
+                justify-content: space-between;
+            }
+
+            position: relative;
+
+            @include after-in(medium) {
+                > :first-child {
+                    order: 2;
+                }
+
+                > :last-child {
+                    order: 1;
+                }
+            }
+        }
+
+        &__nav {
+            @include after-in(large) {
+                margin-bottom: 8vh;
+            }
+        }
+
+        &__picture {
+            position: relative;
+            max-width: inherit;
+            width: 100%;
+
+            @include before-in(medium) {
+                height: 22rem;
+            }
+
+            img,
+            picture {
+                @include before-in(large) {
+                    height: 100%;
+                }
+            }
+
+            picture {
+                @include after-in(large) {
+                    display: flex;
+                    justify-content: flex-end;
+                }
+            }
+
+            img {
+                margin: 0 auto;
+
+                @include after-in(large) {
+                    max-height: 66vh;
+                }
+            }
+
+            @include before-in(medium) {
+                &::after {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    bottom: -1px;
+
+                    height: 1px;
+                    width: 100%;
+                    background-color: var(--clear-color);
+
+                    opacity: 0.25;
+                }
+            }
+        }
+    }
+
+    .copy {
+        gap: 1.6rem;
+
+        @include after-in(medium) {
+            gap: 2rem;
+        }
+
+        @include after-in(large) {
+            margin-top: 10vh;
+        }
+
+        .title {
+            font-size: var(--heading-300);
+        }
+    }
+
+    .overtitle {
+        font-size: var(--heading-200);
+        font-family: var(--font-title-family);
+        opacity: 0.5;
+    }
 }
 </style>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@use '../assets/sass/base/mixins' as *;
+</style>
