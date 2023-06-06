@@ -38,10 +38,10 @@ useHead({
 body {
     --img: url('~/assets/images/home/background-home-mobile.jpg');
 
-    @include after-in(medium) {
+    @include after-out(medium) {
         --img: url('~/assets/images/home/background-home-tablet.jpg');
     }
-    @include after-in(large) {
+    @include after-out(large) {
         --img: url('~/assets/images/home/background-home-desktop.jpg');
     }
 }
@@ -54,7 +54,7 @@ body {
     display: flex;
     flex-direction: row;
 
-    @include after-in(large) {
+    @include after-out(large) {
         min-height: 80vh;
     }
 
@@ -77,7 +77,7 @@ body {
             text-align: center;
         }
 
-        @include after-in(large) {
+        @include after-out(large) {
             align-items: flex-end;
         }
     }
@@ -90,7 +90,7 @@ body {
 }
 
 .cta {
-    @include after-in(large) {
+    @include after-out(large) {
         margin-left: auto;
     }
 }

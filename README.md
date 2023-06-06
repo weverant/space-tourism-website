@@ -1,42 +1,36 @@
-# Nuxt 3 Minimal Starter
+# Frontend Mentor - Space tourism website solution
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This is a solution to the [Space tourism website challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Setup
+## Table of contents
 
-Make sure to install the dependencies:
+-   [Overview](#overview)
+    -   [The challenge](#the-challenge)
+    -   [Screenshot](#screenshot)
+    -   [Links](#links)
+-   [My process](#my-process)
+-   [Built with](#built-with)
+-   [Author](#author)
 
-```bash
-# yarn
-yarn install
+## Overview
 
-# npm
-npm install
+### The challenge
 
-# pnpm
-pnpm install
-```
+Users should be able to:
 
-## Development Server
+-   View the optimal layout for each of the website's pages depending on their device's screen size
+-   See hover states for all interactive elements on the page
+-   View each page and be able to toggle between the tabs to see new information
 
-Start the development server on `http://localhost:3000`
+### Screenshot
 
-```bash
-npm run dev
-```
+![](./screenshot.png)
 
-## Production
+### Links
 
-Build the application for production:
+-   Live Site URL: [https://space-tourism-concept.netlify.app](https://space-tourism-concept.netlify.app)
 
-```bash
-npm run build
-```
+## Built with
 
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+-   [Vue 3](https://vuejs.org)
+-   [Nuxt](https://nuxt.com)

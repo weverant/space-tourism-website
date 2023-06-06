@@ -44,22 +44,22 @@ const changeIndex = (index) => {
 .technology-page {
     --img: url('~/assets/images/technology/background-technology-mobile.jpg');
 
-    @include after-in(medium) {
+    @include after-out(medium) {
         --img: url('~/assets/images/technology/background-technology-tablet.jpg');
     }
-    @include after-in(large) {
+    @include after-out(large) {
         --img: url('~/assets/images/technology/background-technology-desktop.jpg');
     }
 
     .section {
-        @include after-in(large) {
+        @include after-out(large) {
             display: flex;
             flex-direction: column;
         }
     }
 
     .title--section {
-        @include after-in(large) {
+        @include after-out(large) {
             margin-bottom: 0;
         }
     }
@@ -74,13 +74,13 @@ const changeIndex = (index) => {
                 order: 1;
             }
         }
-        @include after-in(large) {
+        @include after-out(large) {
             flex-grow: 1;
             grid-template-columns: 66% 1fr;
         }
 
         &__body {
-            @include after-in(large) {
+            @include after-out(large) {
                 flex-direction: row;
                 gap: 6rem;
                 align-items: center;
@@ -99,7 +99,7 @@ const changeIndex = (index) => {
                 height: 17rem;
             }
 
-            @include after-in(large) {
+            @include after-out(large) {
                 margin-right: max(
                     calc((100vw - var(--container-width)) / -2),
                     -24rem
@@ -132,7 +132,7 @@ const changeIndex = (index) => {
         }
 
         &__nav {
-            @include after-in(large) {
+            @include after-out(large) {
                 display: flex;
                 align-items: center;
             }

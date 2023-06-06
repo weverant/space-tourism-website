@@ -29,7 +29,7 @@ p {
             text-align: center;
         }
 
-        @include after-in(large) {
+        @include after-out(large) {
             margin-bottom: 2.4em;
         }
 

@@ -26,7 +26,7 @@ body {
     height: 100lvh;
     overflow-x: hidden;
 
-    @include after-in(large) {
+    @include after-out(large) {
         min-height: 100vh;
     }
 }

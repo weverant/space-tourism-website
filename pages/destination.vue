@@ -60,10 +60,10 @@ const changeIndex = (index) => {
 .destination-page {
     --img: url('~/assets/images/destination/background-destination-mobile.jpg');
 
-    @include after-in(medium) {
+    @include after-out(medium) {
         --img: url('~/assets/images/destination/background-destination-tablet.jpg');
     }
-    @include after-in(large) {
+    @include after-out(large) {
         --img: url('~/assets/images/destination/background-destination-desktop.jpg');
     }
 
@@ -76,7 +76,7 @@ const changeIndex = (index) => {
         }
 
         &__body {
-            @include after-in(large) {
+            @include after-out(large) {
                 margin-left: auto;
             }
         }
@@ -107,13 +107,13 @@ const changeIndex = (index) => {
 
     text-transform: uppercase;
 
-    @include after-in(medium) {
+    @include after-out(medium) {
         flex-direction: row;
         justify-content: center;
         gap: 8rem;
     }
 
-    @include after-in(large) {
+    @include after-out(large) {
         justify-content: flex-start;
     }
 }

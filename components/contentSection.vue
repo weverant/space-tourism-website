@@ -85,12 +85,12 @@ const props = defineProps(['currentIndex', 'data', 'overtitle']);
             max-height: 52rem;
         }
 
-        @include after-in(medium) {
+        @include after-out(medium) {
             max-width: 30rem;
             margin-bottom: -2rem;
         }
 
-        @include after-in(large) {
+        @include after-out(large) {
             max-width: 44rem;
             display: flex;
             align-items: flex-end;
@@ -113,7 +113,7 @@ const props = defineProps(['currentIndex', 'data', 'overtitle']);
             margin: 0 auto;
         }
 
-        @include after-in(large) {
+        @include after-out(large) {
             max-width: 44ch;
         }
     }

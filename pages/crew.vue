@@ -45,28 +45,28 @@ const changeIndex = (index) => {
 .crew-page {
     --img: url('~/assets/images/crew/background-crew-mobile.jpg');
 
-    @include after-in(medium) {
+    @include after-out(medium) {
         --img: url('~/assets/images/crew/background-crew-tablet.jpg');
     }
-    @include after-in(large) {
+    @include after-out(large) {
         --img: url('~/assets/images/crew/background-crew-desktop.jpg');
     }
 
     .section {
-        @include after-in(large) {
+        @include after-out(large) {
             display: flex;
             flex-direction: column;
         }
     }
 
     .title--section {
-        @include after-in(large) {
+        @include after-out(large) {
             margin-bottom: 0;
         }
     }
 
     .content {
-        @include after-in(large) {
+        @include after-out(large) {
             flex-grow: 1;
         }
 
@@ -74,13 +74,13 @@ const changeIndex = (index) => {
             display: flex;
             flex-direction: column;
 
-            @include after-in(large) {
+            @include after-out(large) {
                 justify-content: space-between;
             }
 
             position: relative;
 
-            @include after-in(medium) {
+            @include after-out(medium) {
                 > :first-child {
                     order: 2;
                 }
@@ -92,7 +92,7 @@ const changeIndex = (index) => {
         }
 
         &__nav {
-            @include after-in(large) {
+            @include after-out(large) {
                 margin-bottom: 8vh;
             }
         }
@@ -114,7 +114,7 @@ const changeIndex = (index) => {
             }
 
             picture {
-                @include after-in(large) {
+                @include after-out(large) {
                     display: flex;
                     justify-content: flex-end;
                 }
@@ -123,7 +123,7 @@ const changeIndex = (index) => {
             img {
                 margin: 0 auto;
 
-                @include after-in(large) {
+                @include after-out(large) {
                     max-height: 66vh;
                 }
             }
@@ -148,11 +148,11 @@ const changeIndex = (index) => {
     .copy {
         gap: 1.6rem;
 
-        @include after-in(medium) {
+        @include after-out(medium) {
             gap: 2rem;
         }
 
-        @include after-in(large) {
+        @include after-out(large) {
             margin-top: 10vh;
         }
 

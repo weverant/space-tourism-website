@@ -32,7 +32,7 @@ const props = defineProps(['length', 'data', 'currentIndex', 'listType']);
     }
 
     &--numbers {
-        @include after-in(large) {
+        @include after-out(large) {
             flex-direction: column;
             justify-content: center;
         }

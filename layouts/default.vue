@@ -74,7 +74,7 @@ watch(route, () => {
     --header-padding: 4rem;
     --header-height: 4rem;
 
-    @include after-in(medium) {
+    @include after-out(medium) {
         --header-height: 9rem;
     }
 }
@@ -111,22 +111,22 @@ watch(route, () => {
 
     z-index: 1;
 
-    @include after-in(medium) {
+    @include after-out(medium) {
         padding-top: 0;
     }
 
-    @include after-in(large) {
+    @include after-out(large) {
         padding-top: var(--header-padding);
     }
 
     &__logo {
         width: 4rem;
 
-        @include after-in(medium) {
+        @include after-out(medium) {
             width: 4.8rem;
         }
 
-        @include after-in(wide) {
+        @include after-out(wide) {
             margin-left: calc(var(--container-width) / -12 - var(--gutter));
         }
     }
@@ -136,7 +136,7 @@ watch(route, () => {
     position: relative;
 
     &::before {
-        @include after-in(wide) {
+        @include after-out(wide) {
             content: '';
             position: absolute;
             right: 95%;
@@ -151,7 +151,7 @@ watch(route, () => {
         }
     }
 
-    @include after-in(medium) {
+    @include after-out(medium) {
         min-width: 60%;
     }
 
@@ -172,12 +172,12 @@ watch(route, () => {
 
             z-index: -1;
 
-            @include after-in(medium) {
+            @include after-out(medium) {
                 inset: 0 calc(var(--container-padding) * -1);
                 width: calc(100% + var(--container-padding) * 2);
             }
 
-            @include after-in(wide) {
+            @include after-out(wide) {
                 width: calc(100% + (100vw - var(--container-width)) / 2);
             }
         }
@@ -197,12 +197,12 @@ watch(route, () => {
             transform: translateX(0);
         }
 
-        @include after-in(medium) {
+        @include after-out(medium) {
             display: flex;
             justify-content: center;
         }
 
-        @include after-in(wide) {
+        @include after-out(wide) {
             justify-content: flex-end;
         }
     }
@@ -223,7 +223,7 @@ watch(route, () => {
             overflow: scroll;
         }
 
-        @include after-in(medium) {
+        @include after-out(medium) {
             flex-direction: row;
             gap: 4.8rem;
         }
@@ -242,7 +242,7 @@ watch(route, () => {
 
             position: relative;
 
-            @include after-in(medium) {
+            @include after-out(medium) {
                 height: 100%;
                 align-items: center;
 
@@ -283,7 +283,7 @@ watch(route, () => {
     position: relative;
     z-index: 2;
 
-    @include after-in(medium) {
+    @include after-out(medium) {
         display: none;
     }
 }

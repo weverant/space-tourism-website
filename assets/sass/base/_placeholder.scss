@@ -9,11 +9,11 @@
     margin: 0 auto;
     padding: 0 var(--container-padding);
 
-    @include after-in(medium) {
+    @include after-out(medium) {
         --container-padding: 4.8rem
     }
 
-    @include after-in(1196) {
+    @include after-out(1196) {
         --container-padding: 0px;
     }
 }

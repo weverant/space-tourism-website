@@ -13,7 +13,7 @@
     column-gap: var(--layout-col-gap);
     row-gap: var(--layout-row-gap);
 
-    @include after-in(large) {
+    @include after-out(large) {
         grid-template-columns: repeat(2, 1fr);
     }
 }
